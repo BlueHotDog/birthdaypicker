@@ -22,20 +22,23 @@
   $.fn.birthdaypicker = function( options ) {
 
     var settings = {
-      "maxAge"        : 120,
-      "minAge"        : 0,
-      "futureDates"   : false,
-      "maxYear"       : todayYear,
-      "dateFormat"    : "middleEndian",
-      "monthFormat"   : "short",
-      "placeholder"   : true,
-      "legend"        : "",
-      "defaultDate"   : false,
-      "fieldName"     : "birthdate",
-      "fieldId"       : "birthdate",
-      "hiddenDate"    : true,
-      "onChange"      : null,
-      "tabindex"      : null
+      "maxAge"            : 120,
+      "minAge"            : 0,
+      "futureDates"       : false,
+      "maxYear"           : todayYear,
+      "dateFormat"        : "middleEndian",
+      "monthFormat"       : "short",
+      "placeholder"       : true,
+      "legend"            : "",
+      "defaultDate"       : false,
+      "fieldName"         : "birthdate",
+      "fieldId"           : "birthdate",
+      "hiddenDate"        : true,
+      "onChange"          : null,
+      "tabindex"          : null,
+      "yearPlaceholder"   : "Year:",
+      "monthPlaceholder"  : "Month:",
+      "dayPlaceholder"    : "Day:"
     };
 
     return this.each(function() {
@@ -78,9 +81,9 @@
 
       // Add the option placeholders if specified
       if (settings["placeholder"]) {
-        $("<option value='0'>Year:</option>").appendTo($year);
-        $("<option value='0'>Month:</option>").appendTo($month);
-        $("<option value='0'>Day:</option>").appendTo($day);
+        $("<option value='0'>"+settings["yearPlaceholder"]+"</option>").appendTo($year);
+        $("<option value='0'>"+settings["monthPlaceholder"]+"</option>").appendTo($month);
+        $("<option value='0'>"+settings["dayPlaceholder"]+"</option>").appendTo($day);
       }
 
       var hiddenDate;
